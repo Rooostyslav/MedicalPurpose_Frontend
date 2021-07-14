@@ -1,0 +1,22 @@
+<app-navigation></app-navigation>
+
+<div class="container p-3">
+    <form #form="ngForm" (ngSubmit)="onSubmit()" class="center-block">
+        <h1>Login</h1>
+        <div *ngIf="error" class="text-danger">
+            <h4>{{error}}</h4>
+        </div>
+        <div class="form-group mb-2">
+            <label for="email" class="h5">Email</label>
+            <input class="form-control col-6" name="email" type="email" [(ngModel)]="login.email" required/>
+        </div>
+        <div class="form-group mb-2">
+            <label for="password" class="h5">Password</label>
+            <div *ngIf="errors.Password" class="text-danger">
+                <h4>{{errors.Password}}</h4>
+            </div>
+            <input class="form-control col-4" name="password" type="password" [(ngModel)]="login.password" required />
+        </div>
+        <button class="btn btn-primary mt-2" type="submit" [disabled]="!form.valid">Login</button>
+    </form>
+</div>

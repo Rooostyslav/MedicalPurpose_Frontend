@@ -1,0 +1,50 @@
+<header>
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="container-fruid">
+            <a [routerLink]="['']" class="navbar-brand">Medicine Purpose</a>
+        </div>
+
+        <ng-template [ngIf]="authService.isLoggedIn">
+            <ul *ngIf="isDoctor" class="navbar-nav mr-1">
+                <li class="nav-item">
+                    <button class="btn btn-danger mr-2" [routerLink]="['/prescriptions/new']">New prescription</button>
+                </li>
+            </ul>
+            <ul *ngIf="isDoctor" class="navbar-nav mr-1">
+                <li class="nav-item">
+                    <button class="btn btn-danger mr-2" [routerLink]="['/visits/new']">New visit</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-1">
+                <li class="nav-item">
+                    <button class="btn btn-success mr-2" [routerLink]="['/visits/my']">My visits</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-1">
+                <li class="nav-item">
+                    <button class="btn btn-success mr-2" [routerLink]="['/prescriptions/my']">My prescriptions</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-1">
+                <li class="nav-item">
+                    <button class="btn btn-warning mr-2" [routerLink]="['/medicines']">Medicines</button>
+                </li>
+            </ul>
+        </ng-template>
+        
+        <div class="container-fruid d-block">
+            <div *ngIf="authService.isLoggedIn" class="d-inline">
+                <button class="btn btn-info m-2 mb-0 mt-0" [routerLink]="['/cabinet']" >
+                    <p class="h6 d-inline">{{user.email}}</p>
+                </button>
+                <button class="btn btn-secondary" (click)="logout()" [routerLink]="['/login']" >
+                    <p class="h6 d-inline">Logout</p>
+                </button>
+            </div>
+            <div *ngIf="!authService.isLoggedIn" class="d-inline">
+                <button class="btn btn-outline-secondary mr-2" [routerLink]="['/register']">Register</button>
+                <button class="btn btn-outline-secondary mr-2" [routerLink]="['/login']">Login</button>
+            </div>
+        </div>
+    </nav>
+</header>

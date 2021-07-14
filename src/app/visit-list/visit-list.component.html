@@ -1,0 +1,26 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h1>My visits list</h1>
+    <div *ngIf="isDoctor" class="mt-2 mb-2">
+        <button class="btn btn-primary" [routerLink]="['/visits/new']">Create new visit</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Doctor name</th>
+                <th>Patient name</th>
+                <th>Date and Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let visit of visits">
+                <td>{{visit.id}}</td>
+                <td>{{visit.doctor.fullName}}</td>
+                <td>{{visit.patient.fullName}}</td>
+                <td>{{transformDate(visit.dateTime)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

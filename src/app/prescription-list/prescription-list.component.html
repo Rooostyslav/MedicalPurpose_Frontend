@@ -1,0 +1,30 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div *ngIf="isDoctor" class="mt-2 mb-2">
+        <h1>My prescriptions list</h1>
+        <button class="btn btn-primary" [routerLink]="['/prescriptions/new']">Create new prescription</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Doctor name</th>
+                <th>Patient name</th>
+                <th>Description</th>
+                <th>View details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prescription of prescriptions">
+                <td>{{prescription.id}}</td>
+                <td>{{prescription.doctor.fullName}}</td>
+                <td>{{prescription.patient.fullName}}</td>
+                <td>{{prescription.description}}</td>
+                <td>
+                    <button class="btn btn-warning" [routerLink]="['/prescriptions/' + prescription.id]">View details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

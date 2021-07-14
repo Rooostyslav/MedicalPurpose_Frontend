@@ -1,0 +1,36 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <form #form="ngForm" class="mt-4" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">
+                <h5>Name</h5>
+                <input class="form-control" type="text" name="name" [(ngModel)]="medicine.name" required>
+            </label>
+        </div>
+
+        <div class="form-group mt-2 row">
+            <label for="description" class="col-6">
+                <h5>Description</h5>
+                <textarea class="form-control" name="description" [(ngModel)]="medicine.description"></textarea>
+            </label>
+        </div>
+
+        <div class="form-group mt-2 row">
+            <label for=" instruction" class="col-6">
+                <h5>Instruction</h5>
+                <textarea class="form-control" name="instruction" [(ngModel)]="medicine.instruction"></textarea>
+            </label>
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="priceForOne">
+                <h5>Price For One</h5>
+                <input class="form-control" type="number" name="priceForOne" [(ngModel)]="medicine.priceForOne" required>
+            </label>
+        </div>
+
+        <button class="btn btn-success mt-2" type="submit" [disabled]="!form.valid">Save</button>
+    </form>
+</div>

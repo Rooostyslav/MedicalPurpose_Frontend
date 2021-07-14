@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h1>Medicines list</h1>
+    <div *ngIf="isDoctor" class="mt-2 mb-2">
+        <button class="btn btn-primary" [routerLink]="['/medicines/new']">Create new medicine</button>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Instruction</th>
+                <th>Price For One</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let medicine of medicines">
+                <td>{{medicine.id}}</td>
+                <td>{{medicine.name}}</td>
+                <td>{{medicine.description}}</td>
+                <td>{{medicine.instruction}}</td>
+                <td>{{medicine.priceForOne}} $</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

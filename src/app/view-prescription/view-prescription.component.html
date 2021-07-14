@@ -1,0 +1,50 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <h3 class="mt-2">View details about my prescription {{prescription.id}}</h3>
+
+    <div>
+        <p>
+            <img [src]="qrCodeImage" alt="qrcode" width="300px" height="300px">
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <h1 class="bolt">Doctor</h1>
+            <ul>
+                <li><strong>Name: </strong>{{prescription.doctor.fullName}}</li>
+                <li><strong>Email: </strong>{{prescription.doctor.email}}</li>
+                <li><strong>Position: </strong>{{prescription.doctor.position}}</li>
+                <li><strong>Kind Of Activity: </strong>{{prescription.doctor.kindOfActivity}}</li>
+            </ul>
+        </div>
+    
+        <div class="col-6">
+            <h1 class="bolt">Patient</h1>
+            <ul>
+                <li><strong>Name: </strong>{{prescription.patient.fullName}}</li>
+                <li><strong>Email: </strong>{{prescription.patient.email}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="bolt">Medicines</h2>
+        <ul *ngFor="let medicine of prescription.medicines" class="col-4">
+            <li><strong>Name</strong>: {{medicine.name}}</li>
+            <li><strong>Description:</strong> {{medicine.description}}</li>
+            <li><strong>Instruction:</strong> {{medicine.instruction}}</li>
+            <li><strong>Price for one:</strong> {{medicine.priceForOne}} $</li>
+            <li><strong>Amount:</strong> {{medicine.amount}} pieces</li>
+            <li><strong>Total price:</strong> {{medicine.totalPrice}} $</li>
+        </ul>
+        <h4>
+            <strong>
+                Total price 
+                <span class="text-danger">{{totalPrice}}</span>
+                 $
+            </strong>
+        </h4>
+    </div>
+</div>
