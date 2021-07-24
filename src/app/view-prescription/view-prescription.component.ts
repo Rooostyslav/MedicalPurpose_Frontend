@@ -14,9 +14,19 @@ export class ViewPrescriptionComponent implements OnInit {
   prescription: any = {
     id: 0,
     doctorId: 0,
-    doctor: null,
+    doctor: {
+      id: 0,
+      fullName: '',
+      email: '',
+      position: '',
+      kindOfActivity: ''
+    },
     patientId: 0,
-    patient: null,
+    patient: {
+      id: 0,
+      fullName: '',
+      email: ''
+    },
     description: '',
     medicines: []
   };

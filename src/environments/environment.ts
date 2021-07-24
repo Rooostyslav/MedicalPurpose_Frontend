@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  medicalPurposeApi: 'http://localhost:40000',
-  medicalPurposeAuthApi: 'http://localhost:40001',
-  allowedDomains: ['http://localhost:40000', 'http://localhost:40001']
+  medicalPurposeApi: 'http://192.168.1.4:40000',
+  medicalPurposeAuthApi: 'http://192.168.1.4:40001',
+  allowedDomains: ['http://192.168.1.4:40000', 'http://192.168.1.4:40001']
 };
 
 /*

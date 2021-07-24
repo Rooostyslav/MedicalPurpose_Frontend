@@ -30,6 +30,13 @@
     </div>
 
     <div class="row">
+        <div class="col-12">
+            <h1 class="bolt">Description</h1>
+            <ul>{{prescription.description}}</ul>
+        </div>
+    </div>
+
+    <div class="row">
         <h2 class="bolt">Medicines</h2>
         <ul *ngFor="let medicine of prescription.medicines" class="col-4">
             <li><strong>Name</strong>: {{medicine.name}}</li>
@@ -39,6 +46,9 @@
             <li><strong>Amount:</strong> {{medicine.amount}} pieces</li>
             <li><strong>Total price:</strong> {{medicine.totalPrice}} $</li>
         </ul>
+    </div>
+
+    <div class="row">
         <h4>
             <strong>
                 Total price 
